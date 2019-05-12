@@ -1,8 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
 @import url(http://fonts.googleapis.com/css?family=Clicker+Script);
 
-/* This 
-is 
+/* This
+is
 a comment! */
 
 /* CSS Syntax:
@@ -42,7 +42,6 @@ figcaption {
 /* ID selector (apply to one unique element per page) */
 
 #logo { /* select elements with id="logo" */
-  background: aqua;
 }
 
 /* Descendent Selector */
@@ -69,4 +68,96 @@ figcaption {
 
 #details a:active {
   color: red;
+}
+
+/* style some layout */
+
+.wrapper {
+  width:960px;
+  margin: 0 auto; /*auto is for left and right margins
+  so that when the screen size changes, the wrappers stay in the centre */
+}
+
+/* styling the media so that it fits within the columns*/
+img,video,audio {
+  max-width: 100%; /*allows audio, video, images to be confined within the column*/
+
+}
+
+/* LAYOUT - now going to create columns, let's go with 3 column structure*/
+
+*{ /*this is so that when we add padding, the float positions stay
+  without this, after we add padding the positions floating to the right
+  would get pushed to the line below */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.col-1{
+  float: left;
+  width: 32%;
+  background: #ccc;
+}
+
+.col-2{
+  float: left;
+  width: 66%;
+  background: #ccc;
+}
+
+.col-3{
+  background: #ccc;
+}
+
+.clearfix:after{
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height:0;
+  line-height:0;
+}
+
+[class*="col-"] /* selects any class that has "col-" in it*/{
+  margin-left: 2%;
+}
+
+.first{
+  margin-left:0%;
+}
+
+
+/* STYLING SECTIONS TO GIVE THEM SPACE */
+
+header{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  background: #fff;
+  z-index:1;
+}
+
+section {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+
+/* SOCIAL SECTION styling */
+#social {
+  position:fixed; /*makes sure that when we scroll down, the links
+  follow along and are fixed in the same position*/
+  top: 200px;
+  right: 20px;
+  width: 40px;
+  z-index: 1; /*ensures that it's always at the front*/
+}
+
+#social a{
+  display:block; /*stacks links vertically*/
+  width: 40px;
+  height:40px;
+  background: yellow;
 }
